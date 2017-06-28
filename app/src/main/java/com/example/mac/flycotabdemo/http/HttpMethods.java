@@ -47,7 +47,6 @@ public class HttpMethods {
     private ContentService contentService;
     private OkHttpClient mOkHttpClient;
 
-    //构造方法私有
     private HttpMethods() {
         //手动创建一个OkHttpClient并设置超时时间
         OkHttpClient.Builder httpClientBuilder = new OkHttpClient.Builder();
