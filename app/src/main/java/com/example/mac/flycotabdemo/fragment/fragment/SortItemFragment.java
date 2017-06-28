@@ -66,7 +66,6 @@ public class SortItemFragment extends BaseFragment implements BaseQuickAdapter.O
 
     @Override
     protected void initBGAData() {
-        Log.d(TAG, "initBGAData: " + arg);
         getContent(arg, 1, refreshType);
     }
 

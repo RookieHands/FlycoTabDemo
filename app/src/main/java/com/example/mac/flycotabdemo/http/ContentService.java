@@ -19,6 +19,4 @@ public interface ContentService {
     Observable<DataBean> getContent(
             @Path("category") String category, @Path("pagesize") String pagesize,
             @Path("pagenum") int pagenum);
-
-
 }

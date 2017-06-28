@@ -50,7 +50,6 @@ public abstract class BaseFragment extends Fragment implements SwipeRefreshLayou
 
         if (view == null) {
 
-            Log.d(TAG, "view: null");
             view = inflater.inflate(R.layout.fragment_sort_base, container, false);
             unbinder = ButterKnife.bind(this, view);
             Bundle arguments = getArguments();

@@ -64,8 +64,6 @@ public abstract class MyBaseLazyFragment extends LazyFragment implements SwipeRe
             loadView.setCancelable(false);
 
             initRvContent();
-
-
             lazyLoad();
         }
 
