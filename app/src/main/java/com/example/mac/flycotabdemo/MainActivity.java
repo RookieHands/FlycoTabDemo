@@ -57,8 +57,6 @@ public class MainActivity extends BaseActivity  {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-
-
         for (int i = 0; i < Constant.sTabTitles.length; i++) {
             mTabEntities.add(new TabEntity(Constant.sTabTitles[i], mIconSelectIds[i], mIconUnselectIds[i]));
         }

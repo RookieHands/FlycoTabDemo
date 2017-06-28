@@ -22,6 +22,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.example.mac.flycotabdemo.Utils.ToastUtil;
 import com.example.mac.flycotabdemo.activity.WebActivity;
 import com.example.mac.flycotabdemo.base.BaseFragment;
 import com.example.mac.flycotabdemo.bean.DataBean;
@@ -42,7 +43,6 @@ public class SortItemFragment extends BaseFragment implements BaseQuickAdapter.O
     String TAG = "SortItemFragment";
     private List<DataBean.ResultsBean> results = new ArrayList<>();
     int pagenum = 1;
-
     int refreshType = 0;
     int loadMoreType = 1;
     String pagesize = "15";
@@ -54,7 +54,6 @@ public class SortItemFragment extends BaseFragment implements BaseQuickAdapter.O
         args.putString("ARG", arg);
         SortItemFragment fragment = new SortItemFragment();
         fragment.setArguments(args);
-
         return fragment;
     }
 
@@ -79,7 +78,6 @@ public class SortItemFragment extends BaseFragment implements BaseQuickAdapter.O
             public void onSubscribe(Disposable d) {
                 if (loadView != null)
                     loadView.show();
-
             }
 
             @Override
@@ -102,10 +100,8 @@ public class SortItemFragment extends BaseFragment implements BaseQuickAdapter.O
                         mMultiRecyclerAdapter.loadMoreComplete();
                         results.addAll(httpBean.getResults());
                         mMultiRecyclerAdapter.setNewData(results);
-
                     }
                 }
-
             }
 
             @Override
@@ -115,10 +111,8 @@ public class SortItemFragment extends BaseFragment implements BaseQuickAdapter.O
                 if (type == loadMoreType) {
                     mMultiRecyclerAdapter.loadMoreFail();
                 }
-                Toast.makeText(getContext(), "网络异常", Toast.LENGTH_LONG).show();
-                //ToastUtil.showToast(getContext(), "网络异常");
+                ToastUtil.showToast(getContext(), "网络异常");
             }
-
             @Override
             public void onComplete() {
                 endLoading();
@@ -132,7 +126,6 @@ public class SortItemFragment extends BaseFragment implements BaseQuickAdapter.O
 
     @Override
     public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-
         Intent intent = new Intent(getContext(), WebActivity.class);
         intent.putExtra("url", results.get(position).getUrl());
         getContext().startActivity(intent);
@@ -142,8 +135,6 @@ public class SortItemFragment extends BaseFragment implements BaseQuickAdapter.O
     @Override
     public void onRefresh() {
         super.onRefresh();
-
-
 
         mMultiRecyclerAdapter.setEnableLoadMore(false);
         pagenum = 1;

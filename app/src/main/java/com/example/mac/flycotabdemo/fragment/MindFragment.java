@@ -42,8 +42,6 @@ public class MindFragment extends Fragment {
     Unbinder unbinder;
     private View view;
 
-
-
     public static MindFragment newInstance() {
         Bundle args = new Bundle();
         MindFragment fragment = new MindFragment();
@@ -58,9 +56,6 @@ public class MindFragment extends Fragment {
         view = inflater.inflate(R.layout.fragment_mind, container, false);
         unbinder = ButterKnife.bind(this, view);
         fakeStatusBar.setBackgroundColor(getResources().getColor(R.color.colorbg));
-
-
-
 
         return view;
     }

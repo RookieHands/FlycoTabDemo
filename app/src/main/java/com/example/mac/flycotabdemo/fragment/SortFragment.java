@@ -34,9 +34,6 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 
-/**
- * 描   述：每日干货数据
- */
 public class SortFragment extends Fragment {
 
     private View view;

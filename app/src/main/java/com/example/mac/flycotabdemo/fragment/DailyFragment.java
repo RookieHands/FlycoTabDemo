@@ -85,14 +85,12 @@ public static final String TAG = "onCreateView";
         for (int i = 0; i <50 ; i++) {
 
             DailyBean bean  = new DailyBean(i%2,"wei");
-
             data.add(bean);
         }
 
         DailyRvAdapter dailyRvAdapter = new DailyRvAdapter(data);
         dailyRvAdapter.openLoadAnimation(BaseQuickAdapter.SCALEIN);
         dailyRvAdapter.isFirstOnly(false);//重复执行动画
-
         rv_daily.setAdapter(dailyRvAdapter);
 
         return view;
